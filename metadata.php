@@ -19,7 +19,7 @@ $aModule = array(
         'en' => 'Displays the articles discounts directly on the articles page',
     ),
     'thumbnail'   => 'out/pictures/pcsg.png',
-    'version'     => '1.0.5',
+    'version'     => '1.0.0',
     'author'      => 'PCSG - Computer & Internet Service OHG',
     'url'         => 'https://pcsg.de/',
     'email'       => 'support@pcsg.de',
