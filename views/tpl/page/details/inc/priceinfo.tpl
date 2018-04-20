@@ -19,7 +19,7 @@
                         <dt>[{oxmultilang ident="FROM"}] [{$priceItem->oxprice2article__oxamount->value}] [{oxmultilang ident="PCS"}]</dt>
                         <dd>
                             [{if $priceItem->oxprice2article__oxaddperc->value}]
-                                [{$priceItem->oxprice2article__oxaddperc->value}]% [{oxmultilang ident="DISCOUNTS"}]
+                                [{$priceItem->oxprice2article__oxaddperc->value}]% [{oxmultilang ident="DISCOUNT"}]
                             [{else}]
                                 [{$priceItem->fbrutprice}] [{$currency->sign}]
                             [{/if}]
@@ -30,10 +30,10 @@
                         <dt>[{$Discount->oxdiscount__oxtitle}]</dt>
                         <dd>
                             [{if $Discount->oxdiscount__oxaddsumtype == "%"}]
-                                [{$Discount->oxdiscount__oxaddsum }]% [{oxmultilang ident="DISCOUNTS"}]
+                                [{$Discount->oxdiscount__oxaddsum }]% [{oxmultilang ident="DISCOUNT"}]
                             [{/if}]
                             [{if $Discount->oxdiscount__oxaddsumtype == "abs"}]
-                                [{$Discount->oxdiscount__oxaddsum }][{$currency->sign}] [{oxmultilang ident="DISCOUNTS"}]
+                                [{$Discount->oxdiscount__oxaddsum }][{$currency->sign}] [{oxmultilang ident="DISCOUNT"}]
                             [{/if}]
                         </dd>
                     [{/foreach}]

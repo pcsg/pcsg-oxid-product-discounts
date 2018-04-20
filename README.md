@@ -4,6 +4,12 @@
 
 This module displays the products discounts directly on the articles page.
 
+## Features
+
+* Renames the `Block price` button in the article page to `Discounts`
+* Show all discounts that are available for the current user for the viewed article in the `Discounts` Window
+* Each discount will get displayed with its name and the appropriate discount value as percentage or absolute number
+
 ## Requirements
 
 This module was written for Oxid6 Community Edition.  
