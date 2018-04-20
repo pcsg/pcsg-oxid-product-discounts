@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Metadata version
  */
@@ -16,7 +15,7 @@ $aModule = array(
         'en' => 'PCSG::Product discounts',
     ),
     'description' => array(
-        'de' =>'Zeigt die Produkt Rabatte direkt auf der Artikelseite an.',
+        'de' => 'Zeigt die Produkt Rabatte direkt auf der Artikelseite an.',
         'en' => 'Displays the articles discounts directly on the articles page',
     ),
     'thumbnail'   => 'out/pictures/pcsg.png',
@@ -25,25 +24,11 @@ $aModule = array(
     'url'         => 'https://pcsg.de/',
     'email'       => 'support@pcsg.de',
     'extend'      => array(
-
-    
+        \OxidEsales\EshopCommunity\Application\Model\Article::class => \PCSG\ProductDiscounts\Application\Model\Article::class
     ),
-    'files'       => array(
-
-      
-    ),
-    'templates'   => array(
-
-      
-    ),
-    'blocks'      => array(
-
-      
-    ),
-    'settings'    => array(
-       
-    ),
-    'events'      => array(
-       
-    ),
+    'files'       => array(),
+    'templates'   => array(),
+    'blocks'      => array(),
+    'settings'    => array(),
+    'events'      => array(),
 );
