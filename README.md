@@ -10,6 +10,10 @@ This module displays the products discounts directly on the articles page.
 * Show all discounts that are available for the current user for the viewed article in the `Discounts` Window
 * Each discount will get displayed with its name and the appropriate discount value as percentage or absolute number
 
+![articles_page.png](out/pictures/docs/articles_page.png)
+
+![discount_modal.png](out/pictures/docs/discount_modal.png)
+
 ## Requirements
 
 This module was written for Oxid6 Community Edition.  
