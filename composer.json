@@ -2,6 +2,7 @@
   "name": "pcsg\/oxid-products-discount",
   "description": "Displays the articles discounts directly on the articles page",
   "type": "oxideshop-module",
+  "license": "GPL-3.0+",
   "keywords": [
     "oxid",
     "modules",
@@ -10,9 +11,6 @@
     "discount"
   ],
   "homepage": "https:\/\/pcsg.de",
-  "license": [
-    "GPL-3.0-only"
-  ],
   "extra": {
     "oxideshop": {
       "blacklist-filter": [
@@ -28,6 +26,5 @@
     "psr-4": {
       "PCSG\\ProductDiscounts\\": "..\/..\/..\/source\/modules\/pcsg\/productdiscounts"
     }
-  },
-  "version": "dev-master"
+  }
 }
