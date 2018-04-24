@@ -23,6 +23,8 @@ We can not guarantuee that the module is working properly on other oxid versions
 
 ## Installation
 
+
+### Composer
 The module can be installed via composer.  
 
 **Step 1: Directory**  
@@ -39,6 +41,8 @@ This will download the module and install it into the correct directory.
 
 **Step 3: Oxid**  
 Activate the Module in your admin panel.
+
+
 
 
 
