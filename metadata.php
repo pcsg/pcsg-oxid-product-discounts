@@ -25,7 +25,7 @@ $aModule = array(
     'email'       => 'support@pcsg.de',
     'extend'      => array(
         \OxidEsales\Eshop\Application\Model\Article::class               => \PCSG\ProductDiscounts\Application\Model\Article::class,
-        \OxidEsales\EShop\Application\Model\DiscountList::class => \PCSG\ProductDiscounts\Application\Model\DiscountList::class
+        \OxidEsales\EshopCommunity\Application\Model\DiscountList::class => \PCSG\ProductDiscounts\Application\Model\DiscountList::class
     ),
     'files'       => array(),
     'templates'   => array(
