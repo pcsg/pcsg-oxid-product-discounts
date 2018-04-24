@@ -24,8 +24,9 @@ $aModule = array(
     'url'         => 'https://pcsg.de/',
     'email'       => 'support@pcsg.de',
     'extend'      => array(
-        \OxidEsales\Eshop\Application\Model\Article::class               => \PCSG\ProductDiscounts\Application\Model\Article::class,
-        \OxidEsales\EshopCommunity\Application\Model\DiscountList::class => \PCSG\ProductDiscounts\Application\Model\DiscountList::class
+        \OxidEsales\Eshop\Application\Model\Article::class      => \PCSG\ProductDiscounts\Application\Model\Article::class,
+        \OxidEsales\Eshop\Application\Model\DiscountList::class => \PCSG\ProductDiscounts\Application\Model\DiscountList::class,
+        \OxidEsales\Eshop\Application\Model\Discount::class     => \PCSG\ProductDiscounts\Application\Model\Discount::class,
     ),
     'files'       => array(),
     'templates'   => array(

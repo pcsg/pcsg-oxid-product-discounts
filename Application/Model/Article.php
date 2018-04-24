@@ -15,7 +15,7 @@ class Article extends Article_parent
      */
     public function getProductDiscounts()
     {
-        $oDiscountList = Registry::get(DiscountList::class);
+        $oDiscountList = Registry::get(\PCSG\ProductDiscounts\Application\Model\DiscountList::class);
         $aDiscounts    = $oDiscountList->getAllArticleDiscounts($this, $this->getArticleUser());
 
         return $aDiscounts;

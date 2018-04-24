@@ -10,24 +10,13 @@ namespace PCSG\ProductDiscounts\Application\Model;
 class DiscountList extends DiscountList_parent
 {
 
-    public function getAllArticleDiscounts($oArticle,$oUser)
+    public function getAllArticleDiscounts($oArticle, $oUser)
     {
-        $aList = [];
+        $aList     = [];
         $aDiscList = $this->_getList($oUser)->getArray();
         foreach ($aDiscList as $oDiscount) {
-            
-
-            if ($this->isGlobalDiscount()) {
+            if ($oDiscount->isArticleAvailable($oArticle)) {
                 $aList[$oDiscount->getId()] = $oDiscount;
-                continue;
-            }
-
-            $sArticleId = $oArticle->getProductId();
-            if (!isset($this->_aHasArticleDiscounts[$sArticleId])) {
-                $blResult = $this->_isArticleAssigned($oArticle) || $this->_isCategoriesAssigned($oArticle->getCategoryIds());
-
-                $aList[$oDiscount->getId()] = $oDiscount;
-                continue;
             }
         }
 
