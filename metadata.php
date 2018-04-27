@@ -39,6 +39,8 @@ $aModule = array(
             'file'     => 'views/blocks/page/details/inc/productmain/details_productmain_price_value.tpl'
         ),
     ),
-    'settings'    => array(),
+    'settings'    => array(
+        array('group' => 'guests', 'name' => 'discount_guest_group_id', 'type' => 'str', 'value' => ''),
+    ),
     'events'      => array(),
 );
