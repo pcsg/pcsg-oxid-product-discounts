@@ -27,6 +27,7 @@ $aModule = array(
         \OxidEsales\Eshop\Application\Model\Article::class      => \PCSG\ProductDiscounts\Application\Model\Article::class,
         \OxidEsales\Eshop\Application\Model\DiscountList::class => \PCSG\ProductDiscounts\Application\Model\DiscountList::class,
         \OxidEsales\Eshop\Application\Model\Discount::class     => \PCSG\ProductDiscounts\Application\Model\Discount::class,
+        \OxidEsales\Eshop\Application\Model\User::class     => \PCSG\ProductDiscounts\Application\Model\User::class,
     ),
     'files'       => array(),
     'templates'   => array(
@@ -41,6 +42,7 @@ $aModule = array(
     ),
     'settings'    => array(
         array('group' => 'guests', 'name' => 'discount_guest_group_id', 'type' => 'str', 'value' => ''),
+        array('group' => 'groups', 'name' => 'non_costumer_groups', 'type' => 'str', 'value' => 'oxiddealer'),
     ),
     'events'      => array(),
 );
