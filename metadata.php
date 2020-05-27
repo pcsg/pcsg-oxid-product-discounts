@@ -43,6 +43,7 @@ $aModule = array(
     'settings'    => array(
         array('group' => 'guests', 'name' => 'discount_guest_group_id', 'type' => 'str', 'value' => ''),
         array('group' => 'groups', 'name' => 'non_costumer_groups', 'type' => 'str', 'value' => 'oxiddealer'),
+        array('group' => 'groups', 'name' => 'custom_new_customer_group', 'type' => 'str', 'value' => ''),
     ),
     'events'      => array(),
 );

@@ -31,8 +31,9 @@ class User extends User_parent
             $dLargeCustPrice  = (float)$myConfig->getConfigParam('sLargeCustPrice');
 
             /** PCSG  Only Adds Oxidcustomer group on order if user is not in non_customer_groups  pcsg-projects/farrado#76 **/
-            $groups         = Registry::getConfig()->getConfigParam('non_costumer_groups');
-            $addtoCustomers = true;
+            $groups               = Registry::getConfig()->getConfigParam('non_costumer_groups');
+            $newCustomerGroupHash = Registry::getConfig()->getConfigParam('custom_new_customer_group');
+            $addtoCustomers       = true;
 
             if (!empty($groups)) {
                 $groups = explode(',', $groups);
@@ -43,6 +44,16 @@ class User extends User_parent
                     $addtoCustomers = false;
                 }
             }
+
+            $usergroups = $this->__get('oGroups')->getArray();
+
+            //pcsg-projects/farrado#62
+            foreach($usergroups as $Group){
+                if($Group->_sOXID === 'oxidnotyetordered'){
+                    $this->addToGroup($newCustomerGroupHash);
+                }
+            }
+            //end pcsg-projects/farrado#62
 
             if ($addtoCustomers) {
                 $this->addToGroup('oxidcustomer');
