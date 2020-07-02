@@ -29,7 +29,6 @@ $aModule = array(
         \OxidEsales\Eshop\Application\Model\Discount::class     => \PCSG\ProductDiscounts\Application\Model\Discount::class,
         \OxidEsales\Eshop\Application\Model\User::class     => \PCSG\ProductDiscounts\Application\Model\User::class,
     ),
-    'files'       => array(),
     'templates'   => array(
         'pcsg/productdiscounts/priceinfo.tpl' => "pcsg/productdiscounts/views/tpl/page/details/inc/priceinfo.tpl"
     ),
