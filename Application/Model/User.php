@@ -15,8 +15,8 @@ class User extends User_parent
     /**
      * Called after saving an order.
      *
-     * @param object $oBasket Shopping basket object
-     * @param int $iSuccess order success status
+     * @param object $oBasket  Shopping basket object
+     * @param int    $iSuccess order success status
      */
     public function onOrderExecute($oBasket, $iSuccess)
     {
@@ -52,8 +52,8 @@ class User extends User_parent
 
             //pcsg-projects/farrado#62
             // Check if the user didn't order yet...
-            foreach($usergroups as $Group){
-                if($Group->_sOXID === 'oxidnotyetordered'){
+            foreach ($usergroups as $Group) {
+                if ($Group->_sOXID === 'oxidnotyetordered') {
                     // ...if he didn't, add him to the group defined above
                     $this->addToGroup($newCustomerGroupHash);
                 }
