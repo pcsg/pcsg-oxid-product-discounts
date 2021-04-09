@@ -32,25 +32,35 @@ class User extends User_parent
                 ',',
                 Registry::getConfig()->getConfigParam('non_costumer_groups')
             );
+
+            // ID of a group that new customers should be added to
             $newCustomerGroupHash = Registry::getConfig()->getConfigParam('custom_new_customer_group');
-            $addtoCustomers       = true;
+
+            // Should the user be added to customers group?
+            $addtoCustomers = true;
 
             foreach ($nonCustomerGroups as $group) {
+                // Check if the user is in a non-customer group
                 if ($this->inGroup($group)) {
+                    // If he is, he shouldn't be added to customers group later
                     $addtoCustomers = false;
                 }
             }
 
+            // Get the groups the user is part of
             $usergroups = $this->__get('oGroups')->getArray();
 
             //pcsg-projects/farrado#62
+            // Check if the user didn't order yet...
             foreach($usergroups as $Group){
                 if($Group->_sOXID === 'oxidnotyetordered'){
+                    // ...if he didn't, add him to the group defined above
                     $this->addToGroup($newCustomerGroupHash);
                 }
             }
             //end pcsg-projects/farrado#62
 
+            // Should the user be added to customers group?
             if ($addtoCustomers) {
                 $this->addToGroup('oxidcustomer');
             }
