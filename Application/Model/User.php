@@ -27,13 +27,13 @@ class User extends User_parent
             $dLargeCustPrice  = (float)$myConfig->getConfigParam('sLargeCustPrice');
 
             /** PCSG  Only Adds Oxidcustomer group on order if user is not in non_customer_groups  pcsg-projects/farrado#76 **/
-            $nonCustomerGroups    = Registry::getConfig()->getConfigParam('non_costumer_groups');
+            // Users in these groups are not customers
+            $nonCustomerGroups = explode(
+                ',',
+                Registry::getConfig()->getConfigParam('non_costumer_groups')
+            );
             $newCustomerGroupHash = Registry::getConfig()->getConfigParam('custom_new_customer_group');
             $addtoCustomers       = true;
-
-            if (!empty($nonCustomerGroups)) {
-                $nonCustomerGroups = explode(',', $nonCustomerGroups);
-            }
 
             foreach ($nonCustomerGroups as $group) {
                 if ($this->inGroup($group)) {
