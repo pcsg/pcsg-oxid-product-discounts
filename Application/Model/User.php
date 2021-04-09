@@ -47,16 +47,10 @@ class User extends User_parent
                 }
             }
 
-            // Get the groups the user is part of
-            $usergroups = $this->__get('oGroups')->getArray();
-
             //pcsg-projects/farrado#62
-            // Check if the user didn't order yet...
-            foreach ($usergroups as $Group) {
-                if ($Group->_sOXID === 'oxidnotyetordered') {
-                    // ...if he didn't, add him to the group defined above
-                    $this->addToGroup($newCustomerGroupHash);
-                }
+            // If user didn't order yet, add him to the group defined above
+            if ($this->inGroup('oxidnotyetordered')) {
+                $this->addToGroup($newCustomerGroupHash);
             }
             //end pcsg-projects/farrado#62
 
