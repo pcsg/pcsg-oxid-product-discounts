@@ -22,7 +22,7 @@ $aModule = [
     ],
 
     'thumbnail' => 'out/pictures/pcsg.png',
-    'version'   => '1.0.0',
+    'version'   => '1.1.0',
     'author'    => 'PCSG - Computer & Internet Service OHG',
     'url'       => 'https://pcsg.de/',
     'email'     => 'support@pcsg.de',
