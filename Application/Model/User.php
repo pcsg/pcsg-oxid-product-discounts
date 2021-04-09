@@ -22,9 +22,9 @@ class User extends User_parent
     {
         if (is_numeric($iSuccess) && $iSuccess != 2 && $iSuccess <= 3) {
             //adding user to particular customer groups
-            $myConfig         = $this->getConfig();
-            $dMidlleCustPrice = (float)$myConfig->getConfigParam('sMidlleCustPrice');
-            $dLargeCustPrice  = (float)$myConfig->getConfigParam('sLargeCustPrice');
+            $Config           = $this->getConfig();
+            $dMidlleCustPrice = (float)$Config->getConfigParam('sMidlleCustPrice');
+            $dLargeCustPrice  = (float)$Config->getConfigParam('sLargeCustPrice');
 
             /** PCSG  Only Adds Oxidcustomer group on order if user is not in non_customer_groups  pcsg-projects/farrado#76 **/
             // Users in these groups are not customers
@@ -34,28 +34,28 @@ class User extends User_parent
             );
 
             // ID of a group that new customers should be added to
-            $newCustomerGroupHash = Registry::getConfig()->getConfigParam('custom_new_customer_group');
+            $newCustomerGroupID = Registry::getConfig()->getConfigParam('custom_new_customer_group');
 
             // Should the user be added to customers group?
-            $addtoCustomers = true;
+            $addUserToCustomerGroup = true;
 
             foreach ($nonCustomerGroups as $group) {
                 // Check if the user is in a non-customer group
                 if ($this->inGroup($group)) {
                     // If he is, he shouldn't be added to customers group later
-                    $addtoCustomers = false;
+                    $addUserToCustomerGroup = false;
                 }
             }
 
             //pcsg-projects/farrado#62
             // If user didn't order yet, add him to the group defined above
             if ($this->inGroup('oxidnotyetordered')) {
-                $this->addToGroup($newCustomerGroupHash);
+                $this->addToGroup($newCustomerGroupID);
             }
             //end pcsg-projects/farrado#62
 
             // Should the user be added to customers group?
-            if ($addtoCustomers) {
+            if ($addUserToCustomerGroup) {
                 $this->addToGroup('oxidcustomer');
             }
             /** END PCSG **/
