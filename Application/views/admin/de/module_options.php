@@ -16,6 +16,6 @@ $aLang = [
     'SHOP_MODULE_GROUP_groups'                   => 'Gruppen-Einstellungen',
     'SHOP_MODULE_non_costumer_groups'            => 'Nicht-Kunden-Gruppen',
     'HELP_SHOP_MODULE_non_costumer_groups'       => 'Hier können kommasepariert die Ids von Gruppen denen nicht nach der Bestellung die Gruppe Kunden zugeordnet werden soll eingetragen werden.',
-    'SHOP_MODULE_custom_new_customer_group'      => 'GruppenId für neue Kunden',
-    'HELP_SHOP_MODULE_custom_new_customer_group' => 'Hier kann eine GruppenId hinterlegt werden der fortan alle Kunden bei Neubestellung hinzugefügt werden.'
+    'SHOP_MODULE_custom_new_customer_groups'      => 'GruppenIDs für neue Kunden',
+    'HELP_SHOP_MODULE_custom_new_customer_groups' => 'Hier können kommasepariert die IDs von Gruppen hinterlegt werden denen fortan alle Kunden bei Neubestellung hinzugefügt werden.'
 ];

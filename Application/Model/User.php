@@ -33,8 +33,11 @@ class User extends User_parent
                 Registry::getConfig()->getConfigParam('non_costumer_groups')
             );
 
-            // ID of a group that new customers should be added to
-            $newCustomerGroupID = Registry::getConfig()->getConfigParam('custom_new_customer_group');
+            // Comma-separated list of group IDs of groups that new customers should be added to
+            $newCustomerGroups = explode(
+                ',',
+                Registry::getConfig()->getConfigParam('custom_new_customer_groups')
+            );
 
             // Should the user be added to customers group?
             $addUserToCustomerGroup = true;
@@ -50,7 +53,9 @@ class User extends User_parent
             //pcsg-projects/farrado#62
             // If user didn't order yet, add him to the group defined above
             if ($this->inGroup('oxidnotyetordered')) {
-                $this->addToGroup($newCustomerGroupID);
+                foreach ($newCustomerGroups as $group) {
+                    $this->addToGroup($group);
+                }
             }
             //end pcsg-projects/farrado#62
 

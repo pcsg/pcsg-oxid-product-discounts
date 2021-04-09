@@ -49,7 +49,7 @@ $aModule = [
     'settings' => [
         ['group' => 'guests', 'name' => 'discount_guest_group_id', 'type' => 'str', 'value' => ''],
         ['group' => 'groups', 'name' => 'non_costumer_groups', 'type' => 'str', 'value' => 'oxiddealer'],
-        ['group' => 'groups', 'name' => 'custom_new_customer_group', 'type' => 'str', 'value' => ''],
+        ['group' => 'groups', 'name' => 'custom_new_customer_groups', 'type' => 'str', 'value' => ''],
     ],
 
     'events' => [],
