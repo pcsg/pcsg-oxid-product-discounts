@@ -15,6 +15,13 @@ class User extends User_parent
     /**
      * Called after saving an order.
      *
+     * $iSuccess can be one of the following:
+     * 3: order with order ID already exists
+     * 2: payment failure, order deleted
+     * 1: payment success, mail successfully send
+     * 0: payment success, error sending mail
+     * Fore more info see finalizeOrder method in OxidEsales\EshopCommunity\Application\Model\Order
+     *
      * @param object $oBasket  Shopping basket object
      * @param int    $iSuccess order success status
      */
